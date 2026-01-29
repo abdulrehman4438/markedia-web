@@ -5,22 +5,121 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Smooth Starry Background */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
 
+/* Default Light mode background */
+html {
+  background: linear-gradient(
+    135deg,
+    #f5f7fa 0%,
+    #eef2f7 15%,
+    #f0f4f9 35%,
+    #f8f9fb 60%,
+    #ffffff 85%,
+    #ffffff 100%
+  );
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  color-scheme: light;
+  transition: background 0.5s ease;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #d3d3d3, rgba(0,0,0,0)),
+    radial-gradient(0.8px 0.8px at 60px 70px, #c0c0c0, rgba(0,0,0,0)),
+    radial-gradient(0.6px 0.6px at 50px 50px, #e0e0e0, rgba(0,0,0,0)),
+    radial-gradient(0.8px 0.8px at 130px 80px, #d9d9d9, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 90px 10px, #cccccc, rgba(0,0,0,0)),
+    radial-gradient(0.6px 0.6px at 200px 200px, #d3d3d3, rgba(0,0,0,0)),
+    radial-gradient(0.8px 0.8px at 150px 150px, #e0e0e0, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+/* Dark mode - when .dark class is added to html */
+html.dark {
+  background: linear-gradient(
+    135deg,
+    #0a0e27 0%,
+    #1a1f3a 15%,
+    #141d2a 35%,
+    #0d1117 60%,
+    #000000 85%,
+    #0a0a0a 100%
+  );
+  color-scheme: dark;
+  transition: background 0.5s ease;
+}
+
+html.dark::before {
+  background-image: 
+    radial-gradient(1.5px 1.5px at 20px 30px, #c0c0c0, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 60px 70px, #d3d3d3, rgba(0,0,0,0)),
+    radial-gradient(0.8px 0.8px at 50px 50px, #a9a9a9, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 130px 80px, #dcdcdc, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 10px, #e8e8e8, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 200px, #b0c4de, rgba(0,0,0,0)),
+    radial-gradient(1.2px 1.2px at 150px 150px, #c0c0c0, rgba(0,0,0,0));
+  opacity: 0.35;
+}
+
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scroll Animation Styles */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animate-in {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
 }
