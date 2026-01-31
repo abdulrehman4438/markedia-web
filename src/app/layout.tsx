@@ -1,6 +1,7 @@
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { ClientLayout } from './client-layout'
 import { SchemaOrgMarkup } from '@/components/SchemaOrgMarkup'
@@ -66,6 +67,7 @@ export default function RootLayout({
         <ClientLayout>
           {children}
         </ClientLayout>
+        <SpeedInsights />
       </body>
     </html>
   )
