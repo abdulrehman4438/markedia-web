@@ -58,7 +58,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <SchemaOrgMarkup />
-        <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+        <meta name="google-site-verification" content="SNm3vRz4AI4SU_NIqymsotwY0ZJcGnRgdjSld" />
         <link rel="canonical" href="https://markedia.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
