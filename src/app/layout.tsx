@@ -59,6 +59,7 @@ export default function RootLayout({
       <head>
         <SchemaOrgMarkup />
         <meta name="google-site-verification" content="SNm3vRz4AI4SU_NIqymsotwY0ZJcGnRgdjSld" />
+        <link rel="icon" href="/Markedia_logo_finale-removebg.png" type="image/png" />
         <link rel="canonical" href="https://markedia.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
