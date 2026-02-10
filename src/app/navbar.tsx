@@ -56,14 +56,14 @@ export function NavbarComponent() {
             <Link href="/services" className="hover:text-gray-900 transition">
               Services
             </Link>
+            <Link href="/case-studies" className="hover:text-gray-900 transition">
+              Case Studies
+            </Link>
+            <Link href="/blogs" className="hover:text-gray-900 transition">
+              Blog
+            </Link>
             <Link href="/about-us" className="hover:text-gray-900 transition">
               About Us
-            </Link>
-            <Link 
-              href="/about" 
-              className="hover:text-gray-900 transition"
-            >
-              Founder
             </Link>
             <Link href="/faqs" className="hover:text-gray-900 transition">
               FAQs
@@ -120,16 +120,22 @@ export function NavbarComponent() {
                 Services
               </Link>
               <Link 
+                href="/case-studies" 
+                className="px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700 hover:text-gray-900 transition text-sm"
+              >
+                Case Studies
+              </Link>
+              <Link 
+                href="/blogs" 
+                className="px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700 hover:text-gray-900 transition text-sm"
+              >
+                Blog
+              </Link>
+              <Link 
                 href="/about-us" 
                 className="px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700 hover:text-gray-900 transition text-sm"
               >
                 About Us
-              </Link>
-              <Link 
-                href="/about" 
-                className="px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700 hover:text-gray-900 transition text-sm"
-              >
-                Founder
               </Link>
               <Link 
                 href="/faqs" 
